@@ -27,10 +27,7 @@ button::-moz-focus-inner {
 
 #calendari {
     margin:  0 auto;
-    /* height: 330px; */
-    /* width: 350px; */
     font-size: 14px;
-    /* box-shadow: 0px 1px 4px rgba(0,0,0,0.4); */
 }
 table {
     border-collapse: collapse;
@@ -38,10 +35,7 @@ table {
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     background-color: #fff;
     position: absolute;
-
-
 }
-
 
 td,th {
     text-align: center;
@@ -271,7 +265,6 @@ function calendari(widget, data)
     fila.innerHTML += '<th>' + dies_abr[0] + '</th>';
     e.appendChild(fila);
 
-    /* Obtinc el dia que va acabar el mes anterior */
     var inici_mes =
         new Date(data.getFullYear(), data.getMonth(), -1).getDay();
 
@@ -279,9 +272,6 @@ function calendari(widget, data)
 			  data.getMonth(),
 			  -inici_mes);
 
-    /* 6 setmanes per cobrir totes les posiblitats
-     *  Quedaria mes consistent alhora de mostrar molts mesos 
-     *  en una quadricula */
     for(var s = 0; s < 6; s++)
     {
         var fila = document.createElement('tr');
@@ -298,7 +288,6 @@ function calendari(widget, data)
             if(actual.getMonth() !== data.getMonth())
                 cela.className = 'fora';
 
-            /* Si es avui el decorem */
             if(data.getDate() == actual.getDate() &&
 	       data.getMonth() == actual.getMonth())
 		cela.className = 'avui';
